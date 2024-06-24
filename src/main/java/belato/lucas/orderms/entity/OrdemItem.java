@@ -1,10 +1,15 @@
 package belato.lucas.orderms.entity;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+
 import java.math.BigDecimal;
 
 public class OrdemItem {
     public String product;
     private Integer quantity;
+
+    @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal price;
 
     public OrdemItem() {
